@@ -48,6 +48,21 @@ public class StepDefinations{
 		new MainContent(driver).check_assertion_for_the_link();
 	}
 
+	@Given("^open facebook in browser$")
+	public void open_facebook_in_browser() throws Throwable {
+		new MainContent(driver).user_is_on_Home_Page_for_Facebook();
+	}
+
+	@When("^user logs in facebook with \"(.*?)\" and \"(.*?)\" and submits form$")
+	public void user_logs_in_facebook_with_and_and_submits_form(String arg1, String arg2) throws Throwable {
+		new MainContent(driver).user_able_to_send_username_password(arg1, arg2);
+	}
+
+	@Then("^user should be login facebook successfully$")
+	public void user_should_be_login_facebook_successfully() throws Throwable {
+		new MainContent(driver).check_assertion_for_the_fb_link();
+	}
+
 
 
 

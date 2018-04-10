@@ -43,4 +43,19 @@ public class MainContent {
 	public void user_is_closing_browser(){
 		driver.quit();
 	}
+	public void user_is_on_Home_Page_for_Facebook() throws Throwable {
+		driver.get("http://www.facebook.com");
+		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+	}
+	public void user_able_to_send_username_password(String username, String password) {
+		driver.findElement(By.id("email")).sendKeys(username);
+		driver.findElement(By.id("pass")).sendKeys(password);
+		driver.findElement(By.id("pass")).sendKeys(Keys.ENTER);
+	}
+	public void check_assertion_for_the_fb_link(){
+		String FBTitle = "Facebook";
+		String ExpectedTitle = driver.getTitle();
+		assertThat(FBTitle, equalTo(ExpectedTitle));
+	}
 }

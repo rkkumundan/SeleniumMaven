@@ -1,4 +1,14 @@
-Feature: Test if able to Open Google.com
+Feature: Test if able to Open Google.com and Facebook.com
+
+Scenario Outline: User able to Login Facebook
+Given open facebook in browser
+When user logs in facebook with "<username>" and "<password>" and submits form
+Then user should be login facebook successfully 
+And browser should close
+ Examples:
+    | username  | password  |
+    | rkkumundan| raj201988 |
+    
 Scenario: Verify google.com in Browser
 Given open google in browser
 Then browser should open google
@@ -19,6 +29,4 @@ And browser should close
  Examples:
     | something  |
     | Hello World|
-    | Rajkumar   |
   
- 
