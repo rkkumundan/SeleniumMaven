@@ -7,7 +7,7 @@ Then user should be login facebook successfully
 And browser should close
  Examples:
     | username  | password  |
-    | rkkumundan| raj201988 |
+    | rkkumundan| xxxxxxxxx |
     
 Scenario: Verify google.com in Browser
 Given open google in browser
